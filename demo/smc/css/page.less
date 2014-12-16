@@ -1,84 +1,143 @@
-html, body, .wrap, .page{
-    height:100%;
-    width:100%;
+html, body, .wrap, .page {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
-
-.page{
+.page {
     background: #333;
     position: absolute;
     display: none;
     overflow: hidden;
 }
-.page1{
-    background-color: #e8e8e7;
-    background: url(../images/profile.png) center -105px no-repeat;
+.concept {
+    .page1 {
+        background: url(../images/concept_01.png) center 50px no-repeat;
+        background-color: #AAA9A8;
+    }
+    .page2 {
+        background: url(../images/concept_02.png) center 50px no-repeat;
+        background-color: #9FA0A0;
+    }
+    .page3 {
+        background: url(../images/concept_03.png) center 50px no-repeat;
+        background-color: #BDBDBD;
+    }
+    .page4 {
+        background: url(../images/concept_04.png) center 50px no-repeat;
+        background-color: #C5C4C4;
+    }
 }
-.page2{
-    background-color: #a6a5a5;
-    background: url(../images/profile.png) center -785px no-repeat;
+.about {
+    .page1 {
+        background: url(../images/bg/about_01.jpg) center 50px no-repeat;
+        background-color: #AAA9A8;
+    }
+    .page2 {
+        background: url(../images/bg/about_02.jpg) center 50px no-repeat;
+        background-color: #9FA0A0;
+    }
+    .page3 {
+        background: url(../images/bg/about_03.jpg) center 50px no-repeat;
+        background-color: #BDBDBD;
+    }
+    .page4 {
+        background: url(../images/bg/about_04.jpg) center 50px no-repeat;
+        background-color: #C5C4C4;
+    }
 }
-.page3{
-    background-color: #717171;
-    background: url(../images/profile.png) center -1465px no-repeat;
+.profile {
+    .page1 {
+        background: url(../images/profile_01.png) center 50px no-repeat;
+        background-color: #AAA9A8;
+        .page-inner {
+            background: url(../images/p_01.png) 253px 327px no-repeat;
+        }
+    }
+    .page2 {
+        background: url(../images/profile_02.png) center 50px no-repeat;
+        background-color: #9FA0A0;
+        .page-inner {
+            background: url(/images/p_02.png) 581px 104px no-repeat;
+        }
+    }
+    .page3 {
+        background: url(../images/profile_03.png) center 50px no-repeat;
+        background-color: #BDBDBD;
+        .page-inner {
+            background: url(/images/p_03.png) 432px 239px no-repeat
+        }
+    }
+    .page4 {
+        background: url(../images/profile_04.png) center 50px no-repeat;
+        background-color: #C5C4C4;
+        .page-inner {
+            background: url(/images/p_04.png) 384px 176px no-repeat;
+        }
+    }
 }
-.page4{
-    background-color: #d4d5d4;
-    background: url(../images/profile.png) center -2145px no-repeat;
+.join {
+    .page1 {
+        background: url(../images/bg/join_01.jpg) center 50px no-repeat;
+        background-color: #AAA9A8;
+    }
+    .page2 {
+        background: url(../images/bg/join_02.jpg) center 50px no-repeat;
+        background-color: #9FA0A0;
+    }
+    .page3 {
+        background: url(../images/bg/join_03.jpg) center 50px no-repeat;
+        background-color: #BDBDBD;
+    }
+    .page4 {
+        background: url(../images/bg/join_04.jpg) center 50px no-repeat;
+        background-color: #C5C4C4;
+    }
 }
-.page-inner{
+.page-inner {
     height: 600px;
     width: 1200px;
     margin: 0 auto;
+    margin-top: 50px;
 }
-
-header, .header,
-.bar,
-footer, .footer{
+header, .header, .bar, footer, .footer {
     position: absolute;
     z-index: 3;
 }
-
-header,
-.header{
+header, .header {
     top: 0;
     width: 100%;
 }
-.bar{
-    top:65px;
+.bar {
+    top: 65px;
     width: 100%;
 }
-footer,
-.footer{
+footer, .footer {
     bottom: 0;
     left: 50%;
     margin-left: -575px;
 }
-
-.control{
+.control {
     position: absolute;
     height: 0;
     width: 1150px;
     left: 50%;
     top: 50%;
     margin-left: -575px;
-
-    .points{
+    .points {
         height: 90px;
         width: 13px;
         position: absolute;
         top: -45px;
         right: 0;
     }
-
-    .point{
+    .point {
         width: 13px;
         height: 13px;
         display: block;
         margin-bottom: 10px;
         background: url(../images/dots.png) 0 -23px no-repeat;
     }
-    .current{
+    .current {
         background-position: 0 0;
     }
 }
