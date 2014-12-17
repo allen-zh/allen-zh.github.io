@@ -10,13 +10,15 @@
 (function(global) {
     var p = global.parallax; // = require("parallax.js");
     p.speed = 500;
+    p.easing = 'easeOutQuad';
 
     // fixed control element
     var $control = $('.js_control'),
+        $pages = $('.page'),
         $points = $('.point', $control),
         scrolltop = document.body.scrollTop,
         POINT_CUR_CLS = 'current';
-
+    var $footer = $('.footer');
     var pageArray = [];
 
     function init() {
@@ -27,16 +29,18 @@
     function initPage() {
         p.onload = updatePoints;
 
-        for (var i = 1; i <= 4; i++) {
+        for (var i = 0; i < $pages.length; i++) {
             //var year = i + 1999;
-            var pid = "page" + i;
+            //var pid = "page" + i;
+            var pid = $pages.eq(i).attr('id');
 
             p.add($("#" + pid));
             p[pid].onload = pageLoad;
             p[pid].preload = pagePreLoad;
             p[pid].index = pageArray.push(pid) - 1;
         }
-        p.page1.show();
+
+        p[pageArray[0]].show();
     }
 
     function pagePreLoad() {
@@ -63,6 +67,18 @@
 
     function showOrHideTools(type) {
 
+        if (this.index == pageArray.length - 1) {
+            $footer.fadeIn();
+        } else {
+            $footer.fadeOut();
+        }
+
+        if (type == 'load' && this.index == 0) {
+            $('body').removeClass('pinned');
+        }
+        if (type != 'load' && this.index > 0) {
+            $('body').addClass('pinned');
+        }
     }
 
     function initControl() {
@@ -91,7 +107,7 @@
         $(document).keydown(function(e) {
             if (e.keyCode == 38 || e.keyCode == 37) {
                 // if($topAnchor.offset().top == $pageLast.offset().top) 
-                // 	isTrigger = true;
+                //  isTrigger = true;
 
                 // if(isTrigger){
                 onUp(p.current.key);
@@ -201,22 +217,22 @@
     }
 
     /*function fixScroll(){
-		var timer, timer2;
-		$pageLast.scroll(function(){
-			clearTimeout(timer);
-			timer = setTimeout(function(){
-				if($topAnchor.offset().top == $pageLast.offset().top){
-					//clearTimeout(timer2);
+        var timer, timer2;
+        $pageLast.scroll(function(){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                if($topAnchor.offset().top == $pageLast.offset().top){
+                    //clearTimeout(timer2);
 
-					//timer2 = setTimeout(function(){
-						isTrigger = true;
-					//},30);
-				}else{
-					isTrigger = false;
-				}
-			},20);
-		});
-	}*/
+                    //timer2 = setTimeout(function(){
+                        isTrigger = true;
+                    //},30);
+                }else{
+                    isTrigger = false;
+                }
+            },20);
+        });
+    }*/
 
     function goPage(pageKey, fnName) {
         var page = p[pageKey];
@@ -245,8 +261,8 @@
             onUp: onUp
         }
         // module.exports = {
-        // 	init 	: init, 
-        // 	onDown 	: onDown,
-        // 	onUp 	: onUp
+        //  init    : init, 
+        //  onDown  : onDown,
+        //  onUp    : onUp
         // }
 })(window);

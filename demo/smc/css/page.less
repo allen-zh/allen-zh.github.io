@@ -1,3 +1,4 @@
+@verti: 65px;
 html, body, .wrap, .page {
     height: 100%;
     width: 100%;
@@ -11,64 +12,80 @@ html, body, .wrap, .page {
 }
 .concept {
     .page1 {
-        background: url(../images/concept_01.png) center 50px no-repeat;
-        background-color: #AAA9A8;
+        background: url(../images/concept_01.png) center @verti no-repeat;
+        background-color: #E8E8E7;
+        .page-inner {
+            background: url(/images/c_01.png) 472px 223px no-repeat;
+        }
     }
     .page2 {
-        background: url(../images/concept_02.png) center 50px no-repeat;
-        background-color: #9FA0A0;
+        background: url(../images/concept_02.png) center @verti no-repeat;
+        background-color: #A7A6A6;
+        .page-inner {
+            background: url(/images/c_02.png) 644px 262px no-repeat;
+        }
     }
     .page3 {
-        background: url(../images/concept_03.png) center 50px no-repeat;
-        background-color: #BDBDBD;
+        background: url(../images/concept_03.png) center @verti no-repeat;
+        background-color: #B6B5B6;
+        .page-inner {
+            background: url(/images/c_03.png) 566px 297px no-repeat;
+        }
     }
     .page4 {
-        background: url(../images/concept_04.png) center 50px no-repeat;
-        background-color: #C5C4C4;
+        background: url(../images/concept_04.png) center @verti no-repeat;
+        background-color: #D9DADA;
+        .page-inner {
+            background: url(/images/c_04.png) 301px 176px no-repeat;
+        }
     }
 }
 .about {
     .page1 {
-        background: url(../images/bg/about_01.jpg) center 50px no-repeat;
-        background-color: #AAA9A8;
+        background: url(../images/bg/about_01.jpg) center @verti no-repeat;
+        background-color: #DADCDB;
     }
     .page2 {
-        background: url(../images/bg/about_02.jpg) center 50px no-repeat;
-        background-color: #9FA0A0;
+        background: url(../images/bg/about_02.jpg) center @verti no-repeat;
+        background-color: #DADCDB;
     }
     .page3 {
-        background: url(../images/bg/about_03.jpg) center 50px no-repeat;
-        background-color: #BDBDBD;
+        background: url(../images/bg/about_03.jpg) center @verti no-repeat;
+        background-color: #DADCDB;
     }
     .page4 {
-        background: url(../images/bg/about_04.jpg) center 50px no-repeat;
-        background-color: #C5C4C4;
+        background: url(../images/bg/about_04.jpg) center @verti no-repeat;
+        background-color: #0B090A;
+    }
+    .page5 {
+        background: url(../images/bg/about_05.jpg) center @verti no-repeat;
+        background-color: #C8C9CB;
     }
 }
 .profile {
     .page1 {
-        background: url(../images/profile_01.png) center 50px no-repeat;
+        background: url(../images/profile_01.png) center @verti no-repeat;
         background-color: #AAA9A8;
         .page-inner {
             background: url(../images/p_01.png) 253px 327px no-repeat;
         }
     }
     .page2 {
-        background: url(../images/profile_02.png) center 50px no-repeat;
+        background: url(../images/profile_02.png) center @verti no-repeat;
         background-color: #9FA0A0;
         .page-inner {
             background: url(/images/p_02.png) 581px 104px no-repeat;
         }
     }
     .page3 {
-        background: url(../images/profile_03.png) center 50px no-repeat;
+        background: url(../images/profile_03.png) center @verti no-repeat;
         background-color: #BDBDBD;
         .page-inner {
             background: url(/images/p_03.png) 432px 239px no-repeat
         }
     }
     .page4 {
-        background: url(../images/profile_04.png) center 50px no-repeat;
+        background: url(../images/profile_04.png) center @verti no-repeat;
         background-color: #C5C4C4;
         .page-inner {
             background: url(/images/p_04.png) 384px 176px no-repeat;
@@ -77,27 +94,33 @@ html, body, .wrap, .page {
 }
 .join {
     .page1 {
-        background: url(../images/bg/join_01.jpg) center 50px no-repeat;
+        background: url(../images/bg/join_01.jpg) center @verti no-repeat;
         background-color: #AAA9A8;
     }
     .page2 {
-        background: url(../images/bg/join_02.jpg) center 50px no-repeat;
+        background: url(../images/bg/join_02.jpg) center @verti no-repeat;
         background-color: #9FA0A0;
     }
     .page3 {
-        background: url(../images/bg/join_03.jpg) center 50px no-repeat;
+        background: url(../images/bg/join_03.jpg) center @verti no-repeat;
         background-color: #BDBDBD;
     }
     .page4 {
-        background: url(../images/bg/join_04.jpg) center 50px no-repeat;
+        background: url(../images/bg/join_04.jpg) center @verti no-repeat;
         background-color: #C5C4C4;
+    }
+    .page5 {
+        background: url(../images/bg/join_05.jpg) center @verti no-repeat;
+    }
+    .page {
+        background-color: #DDDDDD;
     }
 }
 .page-inner {
     height: 600px;
     width: 1200px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 65px;
 }
 header, .header, .bar, footer, .footer {
     position: absolute;

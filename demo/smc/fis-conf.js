@@ -9,6 +9,15 @@ fis.config.merge({
             html: 'html-compress'
         }
     },
+    pack: {
+        'css/aio.css': [
+            'css/**.css',
+            'css/**.less'
+        ],
+        'js/aio.js': [
+            'js/**.js'
+        ]
+    },
     roadmap: {
         ext: {
             less: 'css'
