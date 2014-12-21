@@ -41,18 +41,23 @@
     </section>
     <section class="wrap">
         <div id="page1" class="page page1">
+            <img src="images/bg/join01.jpg" alt="" class="g-hide bg">
             <div class="page-inner"></div>
         </div>
         <div id="page2" class="page page2">
+            <img src="images/bg/join02.jpg" alt="" class="g-hide bg">
             <div class="page-inner"></div>
         </div>
         <div id="page3" class="page page3">
+            <img src="images/bg/join03.jpg" alt="" class="g-hide bg">
             <div class="page-inner"></div>
         </div>
         <div id="page4" class="page page4">
+            <img src="images/bg/join04.jpg" alt="" class="g-hide bg">
             <div class="page-inner"></div>
         </div>
         <div id="page5" class="page page5">
+            <img src="images/bg/join05.jpg" alt="" class="g-hide bg">
             <div class="page-inner"></div>
         </div>
         <div class="control js_control">
@@ -80,7 +85,30 @@
     $(document).ready(function() {
         page.init();
 
-        $("body").addClass(["p1", "p2", "p3"][parseInt(Math.random() * 3) % 3]);
+        setBgImg();
+
+        function setBgImg() {
+            var $bg = $('body .bg');
+            var width = $(window).width();
+            var height = $(window).height();
+
+            if (width / height > 1440 / 750) {
+                $bg.css({
+                    height: 'auto',
+                    width: '100%',
+                    left: 0
+                });
+            } else {
+                $bg.css({
+                    width: 'auto',
+                    height: '100%',
+                    left: (width - height * 1440 / 750) / 2 + 'px'
+                });
+            }
+
+            $bg.fadeIn();
+        }
+        $(window).on('resize', setBgImg);
 
         $("#login")
             .mouseenter(function() {

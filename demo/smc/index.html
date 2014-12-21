@@ -13,6 +13,7 @@
 </head>
 
 <body class="">
+    <img src="" alt="" class="g-hide bg">
     <header class="header">
         <div class="g-wd header-inner">
             <div class="g-fr lang-switch">
@@ -52,7 +53,35 @@
     <script type="text/javascript" src="js/popwin.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        $("body").addClass(["p1", "p2", "p3"][parseInt(Math.random() * 3) % 3]);
+        //$("body").addClass(["p1", "p2", "p3"][parseInt(Math.random() * 3) % 3]);
+        $("body .bg").attr('src', [
+            __uri("/images/p1.jpg"),
+            __uri("/images/p2.jpg"),
+            __uri("/images/p3.jpg")
+        ][parseInt(Math.random() * 3) % 3]).show();
+
+        setBgImg();
+
+        function setBgImg() {
+            var $bg = $('body .bg');
+            var width = $(window).width();
+            var height = $(window).height();
+
+            if (width / height > 1440 / 750) {
+                $bg.css({
+                    height: 'auto',
+                    width: '100%',
+                    left: 0
+                });
+            } else {
+                $bg.css({
+                    width: 'auto',
+                    height: '100%',
+                    left: (width - height * 1440 / 750) / 2 + 'px'
+                });
+            }
+        }
+        $(window).on('resize', setBgImg);
 
         $("#login")
             .mouseenter(function() {

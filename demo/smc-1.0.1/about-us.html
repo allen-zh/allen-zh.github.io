@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="rs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>STANDMAC</title>
+<link href="http://www.standmac.com/images/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="/demo/smc-1.0.1/css/reset_5ff7f7e.css" />
+<link rel="stylesheet" type="text/css" href="/demo/smc-1.0.1/css/common_ee96bb4.css" />
+<link rel="stylesheet" type="text/css" href="/demo/smc-1.0.1/css/smc_19b5f92.css" />
+<link rel="stylesheet" type="text/css" href="/demo/smc-1.0.1/css/page_81b2fda.css" />
+</head>
+<body class="about">
+<header class="header">
+<div class="g-wd header-inner">
+<div class="g-fr lang-switch">
+<a hidefocus="true" href="">中文</a>|<a href="">ENGLISH</a>
+</div>
+<a hidefocus="true" href="index.html" class="g-ib logo">
+<img src="http://www.standmac.com/images/logo.png" width="140" height="65">
+</a>
+<nav class="g-ib nav">
+<a hidefocus="true" href="concept.html" class="g-ib nav-item">Concept</a>
+<a hidefocus="true" href="about-us.html" class="g-ib nav-item nav-current">About Us</a>
+<a hidefocus="true" href="profile.html" class="g-ib nav-item">Profile</a>
+<a hidefocus="true" href="join-us.html" class="g-ib nav-item">Join Us</a>
+</nav>
+</div>
+</header>
+<section class="bar">
+<div class="g-wd bar-inner">
+<div class="g-fr login-box">
+<a hidefocus="true" id="login" href="" class="login">Login</a>
+<span class="split">|</span>
+<a hidefocus="true" id="reg" href="" class="reg">Register</a>
+</div>
+</div>
+</section>
+<section class="wrap">
+<div id="page1" class="page page1">
+<img src="/demo/smc-1.0.1/images/bg/about01_8f73433.jpg" alt="" class="g-hide bg">
+<div class="page-inner"></div>
+</div>
+<div id="page2" class="page page2">
+<img src="/demo/smc-1.0.1/images/bg/about02_8de5ced.jpg" alt="" class="g-hide bg">
+<div class="page-inner"></div>
+</div>
+<div id="page3" class="page page3">
+<img src="/demo/smc-1.0.1/images/bg/about03_6441f04.jpg" alt="" class="g-hide bg">
+<div class="page-inner"></div>
+</div>
+<div id="page4" class="page page4">
+<img src="/demo/smc-1.0.1/images/bg/about04_af0599d.jpg" alt="" class="g-hide bg">
+<div class="page-inner"></div>
+</div>
+<div id="page5" class="page page5">
+<img src="/demo/smc-1.0.1/images/bg/about05_6dff904.jpg" alt="" class="g-hide bg">
+<div class="page-inner"></div>
+</div>
+<div class="control js_control">
+<div class="points">
+<a href="#" class="point page1" data-page="page1" hidefocus="true"></a>
+<a href="#" class="point page2" data-page="page2" hidefocus="true"></a>
+<a href="#" class="point page3" data-page="page3" hidefocus="true"></a>
+<a href="#" class="point page4" data-page="page4" hidefocus="true"></a>
+<a href="#" class="point page5" data-page="page5" hidefocus="true"></a>
+</div>
+</div>
+</section>
+<footer class="g-wd g-hide footer">
+STANDMAC Mes Co., Ltd.<br>www.standmac.com<br>© Copyright 2013 STANDMAC Mes Limited. All rights reserved.<br>
+</footer>
+<script type="text/javascript" src="/demo/smc-1.0.1/js/jquery_7350410.js"></script>
+<script type="text/javascript" src="/demo/smc-1.0.1/js/jquery_easing_008f852.js"></script>
+<script type="text/javascript" src="/demo/smc-1.0.1/js/popwin_890adec.js"></script>
+<script type="text/javascript" src="/demo/smc-1.0.1/js/parallax_f736368.js"></script>
+<script type="text/javascript" src="/demo/smc-1.0.1/js/page_7fa5206.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        page.init();
+
+        setBgImg();
+
+        function setBgImg() {
+            var $bg = $('body .bg');
+            var width = $(window).width();
+            var height = $(window).height();
+
+            if (width / height > 1440 / 750) {
+                $bg.css({
+                    height: 'auto',
+                    width: '100%',
+                    left: 0
+                });
+            } else {
+                $bg.css({
+                    width: 'auto',
+                    height: '100%',
+                    left: (width - height * 1440 / 750) / 2 + 'px'
+                });
+            }
+
+            $bg.fadeIn();
+        }
+        $(window).on('resize', setBgImg);
+
+        $("#login")
+            .mouseenter(function() {
+                popWin.loadWin("1100", "520", "", "http://www.standmac.com/login.asp");
+            })
+            .click(function() {
+                popWin.show();
+
+                return false;
+            });
+
+        $("#reg")
+            .mouseenter(function() {
+                popWin.loadWin("1100", "520", "", "http://www.standmac.com/reg.asp");
+            })
+            .click(function() {
+                popWin.show();
+                return false;
+            });
+    });
+    </script>
+</body>
+</html>
