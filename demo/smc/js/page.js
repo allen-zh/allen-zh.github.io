@@ -9,8 +9,8 @@
 //define(function(require) {
 (function(global) {
     var p = global.parallax; // = require("parallax.js");
-    p.speed = 800;
-    p.easing = 'easeInCubic';
+    p.speed = 1000;
+    p.easing = 'easeInCirc';
 
     // fixed control element
     var $control = $('.js_control'),

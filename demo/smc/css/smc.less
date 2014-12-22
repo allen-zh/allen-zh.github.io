@@ -55,6 +55,13 @@ header, .header {
         color: #333;
         text-decoration: underline;
     }
+    &:after {
+        content: '\20';
+        display: block;
+        height: 9px;
+        margin-top: 32px;
+        background: url(/images/shadow.png) center -2px no-repeat;
+    }
 }
 .pinned {
     header, .header {
@@ -92,11 +99,13 @@ header, .header {
         position: fixed;
         width: 100%;
         top: 65px;
-        height: 9px;
-        background: url(/images/shadow.png) center -2px no-repeat;
+        height: 0;
         background-color: transparent;
         .login-box {
             display: none;
+        }
+        &:after {
+            margin-top: 0;
         }
     }
 }
