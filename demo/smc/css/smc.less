@@ -48,6 +48,7 @@ header, .header {
     line-height: 32px;
     font-size: 12px;
     background-color: #F8B62A;
+    position: relative;
     a, span {
         padding: 0 3px;
     }
@@ -57,9 +58,11 @@ header, .header {
     }
     &:after {
         content: '\20';
+        position: absolute;
         display: block;
         height: 9px;
-        margin-top: 32px;
+        width: 100%;
+        top: 32px;
         background: url(/images/shadow.png) center -2px no-repeat;
     }
 }
@@ -105,7 +108,7 @@ header, .header {
             display: none;
         }
         &:after {
-            margin-top: 0;
+            top: 0;
         }
     }
 }
