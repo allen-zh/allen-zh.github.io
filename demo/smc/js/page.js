@@ -9,8 +9,8 @@
 //define(function(require) {
 (function(global) {
     var p = global.parallax; // = require("parallax.js");
-    p.speed = 500;
-    p.easing = 'easeOutQuad';
+    p.speed = 800;
+    p.easing = 'easeInCubic';
 
     // fixed control element
     var $control = $('.js_control'),
@@ -30,8 +30,6 @@
         p.onload = updatePoints;
 
         for (var i = 0; i < $pages.length; i++) {
-            //var year = i + 1999;
-            //var pid = "page" + i;
             var pid = $pages.eq(i).attr('id');
 
             p.add($("#" + pid));
@@ -53,14 +51,17 @@
     }
 
     function pageLoad() {
+
         var $page = $("#" + this.key);
         var $inner = $('.page-inner', $page);
-        $inner.css({
-            'margin-top': '+=50px'
-        }).show().animate({
-            'margin-top': '-=50px'
-        }, 200, 'easeOutQuad');
 
+        if (!!p.last) {
+            $inner.css({
+                'margin-top': '+=50px'
+            }).show().animate({
+                'margin-top': '-=50px'
+            }, 400, 'easeOutQuad');
+        }
 
         showOrHideTools.call(this, 'load');
     }
@@ -68,9 +69,9 @@
     function showOrHideTools(type) {
 
         if (this.index == pageArray.length - 1) {
-            $footer.fadeIn();
+            $footer.fadeIn(800);
         } else {
-            $footer.fadeOut();
+            $footer.fadeOut(400);
         }
 
         if (type == 'load' && this.index == 0) {
