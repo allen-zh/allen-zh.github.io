@@ -1,7 +1,11 @@
+@font-face {
+    font-family: 'KozGoPro';
+    src: url('font/KozGoPro-ExtraLight.otf');
+}
 header, .header {
     height: 65px;
     font-weight: lighter;
-    font-family: 'KozGoPr6N';
+    font-family: 'KozGoPro', 'Century Gothic', 'Arial';
     background: #000;
     .logo, .logo img {
         height: 65px;
@@ -32,7 +36,8 @@ header, .header {
     .lang-switch {
         height: 25px;
         line-height: 25px;
-        width: 120px;
+        padding-right: 8px;
+        width: 112px;
         margin-top: 20px;
         color: #f8b62d;
         text-align: right;
@@ -40,7 +45,10 @@ header, .header {
         border-radius: 2px;
         a {
             color: #f8b62d;
-            padding: 0 8px;
+            padding: 0 5px;
+        }
+        .split {
+            font-family: tohoma;
         }
     }
 }
@@ -51,7 +59,10 @@ header, .header {
     background-color: #F8B62A;
     position: relative;
     a, span {
-        padding: 0 3px;
+        padding: 0 2px;
+    }
+    .split {
+        font-family: tohoma;
     }
     a:hover {
         color: #333;

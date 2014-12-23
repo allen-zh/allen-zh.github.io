@@ -48,7 +48,3 @@ a {
 a:hover {
     color: #f06;
 }
-@font-face {
-    font-family: 'KozGoPr6N';
-    src: url('http://allen-zh.github.io/demo/smc-1.0.3/css/KozGoPr6N-ExtraLight.otf');
-}
