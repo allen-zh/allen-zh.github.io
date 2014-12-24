@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>STANDMAC</title>
     <link href="http://www.standmac.com/images/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
+
     <link rel="stylesheet" type="text/css" href="css/smc.less" />
     <link rel="stylesheet" type="text/css" href="css/page.less" />
 </head>
 
-<body class="profile">
+<body class="rs profile">
     <header class="header">
         <div class="g-wd header-inner">
             <div class="g-fr lang-switch">
@@ -56,15 +55,15 @@
             <img src="images/bg/profile-04.jpg" alt="" class="g-hide bg">
             <div class="page-inner"></div>
         </div>
-        <div class="control js_control">
-            <div class="points">
-                <a href="#" class="point page1" data-page="page1" hidefocus="true"></a>
-                <a href="#" class="point page2" data-page="page2" hidefocus="true"></a>
-                <a href="#" class="point page3" data-page="page3" hidefocus="true"></a>
-                <a href="#" class="point page4" data-page="page4" hidefocus="true"></a>
-            </div>
-        </div>
     </section>
+    <div class="control js_control">
+        <div class="points">
+            <a href="#" class="point page1" data-page="page1" hidefocus="true"></a>
+            <a href="#" class="point page2" data-page="page2" hidefocus="true"></a>
+            <a href="#" class="point page3" data-page="page3" hidefocus="true"></a>
+            <a href="#" class="point page4" data-page="page4" hidefocus="true"></a>
+        </div>
+    </div>
     <footer class="g-wd g-hide footer">
         STANDMAC Mes Co., Ltd.
         <br> www.standmac.com
@@ -73,56 +72,14 @@
     </footer>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery_easing.js"></script>
-    <script type="text/javascript" src="js/popwin.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/parallax.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         page.init();
-
-        setBgImg();
-
-        function setBgImg() {
-            var $bg = $('body .bg');
-            var width = $(window).width();
-            var height = $(window).height();
-
-            if (width / height > 1440 / 750) {
-                $bg.css({
-                    height: 'auto',
-                    width: '100%',
-                    left: 0
-                });
-            } else {
-                $bg.css({
-                    width: 'auto',
-                    height: '100%',
-                    left: (width - height * 1440 / 750) / 2 + 'px'
-                });
-            }
-
-            $bg.fadeIn();
-        }
-        $(window).on('resize', setBgImg);
-
-        $("#login")
-            .mouseenter(function() {
-                popWin.loadWin("1100", "520", "", "http://www.standmac.com/login.asp");
-            })
-            .click(function() {
-                popWin.show();
-
-                return false;
-            });
-
-        $("#reg")
-            .mouseenter(function() {
-                popWin.loadWin("1100", "520", "", "http://www.standmac.com/reg.asp");
-            })
-            .click(function() {
-                popWin.show();
-                return false;
-            });
+        popWin.init();
+        bgImgFix.init();
     });
     </script>
     <script>

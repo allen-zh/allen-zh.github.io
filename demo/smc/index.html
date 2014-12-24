@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>STANDMAC</title>
     <link href="http://www.standmac.com/images/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/smc.less" />
-    <link rel="stylesheet" type="text/css" href="css/index.less" />
+    <style type="text/css">
+    .main {
+        height: 540px;
+    }
+    body {
+        overflow: hidden;
+    }
+    body .bg {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+    </style>
 </head>
 
-<body class="">
-    <img src="" alt="" class="g-hide bg">
+<body class="rs">
+    <img src="images/blank.gif" alt="" class="g-hide bg">
     <header class="header">
         <div class="g-wd header-inner">
             <div class="g-fr lang-switch">
@@ -42,7 +53,6 @@
         </div>
     </section>
     <section class="g-wd main">
-
     </section>
     <footer class="g-wd footer">
         STANDMAC Mes Co., Ltd.
@@ -51,7 +61,7 @@
         <br>
     </footer>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/popwin.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $("body .bg").attr('src', [
@@ -60,47 +70,8 @@
             __uri("/images/p3.jpg")
         ][parseInt(Math.random() * 3) % 3]).show();
 
-        setBgImg();
-
-        function setBgImg() {
-            var $bg = $('body .bg');
-            var width = $(window).width();
-            var height = $(window).height();
-
-            if (width / height > 1440 / 750) {
-                $bg.css({
-                    height: 'auto',
-                    width: '100%',
-                    left: 0
-                });
-            } else {
-                $bg.css({
-                    width: 'auto',
-                    height: '100%',
-                    left: (width - height * 1440 / 750) / 2 + 'px'
-                });
-            }
-        }
-        $(window).on('resize', setBgImg);
-
-        $("#login")
-            .mouseenter(function() {
-                popWin.loadWin("1100", "520", "", "http://www.standmac.com/login.asp");
-            })
-            .click(function() {
-                popWin.show();
-
-                return false;
-            });
-
-        $("#reg")
-            .mouseenter(function() {
-                popWin.loadWin("1100", "520", "", "http://www.standmac.com/reg.asp");
-            })
-            .click(function() {
-                popWin.show();
-                return false;
-            });
+        popWin.init();
+        bgImgFix.init();
     });
     </script>
     <script>

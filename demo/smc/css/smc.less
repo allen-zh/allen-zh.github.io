@@ -1,3 +1,5 @@
+@import url('reset.css?__inline');
+@import url('common.css?__inline');
 @font-face {
     font-family: 'KozGoPro';
     src: url('font/KozGoPro-ExtraLight.otf');
@@ -149,19 +151,16 @@ footer, .footer {
             margin-left: 0;
             left: 0;
         }
-        .profile {
-            .control {
-                width: 100%;
-                left: 0;
-                margin-left: auto;
-                .points {
-                    right: 10px;
-                }
-            }
-            .page {
-                background-size: 120%;
-                background-position: center;
-            }
+        .control {
+            width: 94%;
+            left: 3%;
+        }
+    }
+}
+@media only screen and (max-width: 950px), only screen and (max-device-width: 950px) {
+    .rs {
+        .header .nav {
+            margin-left: 20px;
         }
     }
 }

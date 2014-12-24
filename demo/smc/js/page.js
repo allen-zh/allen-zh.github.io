@@ -19,6 +19,7 @@
         scrolltop = document.body.scrollTop,
         POINT_CUR_CLS = 'current';
     var $footer = $('.footer');
+    var $wrap = $('.wrap');
     var pageArray = [];
 
     function init() {
@@ -94,7 +95,7 @@
             }, 20);
         });
 
-        bindSwipe(document, function(swipeLeft, swipeUp) {
+        bindSwipe($wrap[0], function(swipeLeft, swipeUp) {
             //console.log(left, up);
             if (swipeUp) {
                 onUp();
@@ -208,11 +209,14 @@
         }, false);
 
         ele.addEventListener("touchend", function(event) {
-            event.preventDefault();
-            //alert(event.changedTouches.length);
+
+            // alert(event.changedTouches.length);
             if (!event.changedTouches.length) return;
             var touch = event.changedTouches[0];
+            // 如果没动
+            if (touch.pageY - touchY === 0) return;
 
+            event.preventDefault();
             Handler(touch.pageX - touchX > 0, touch.pageY - touchY > 0);
         }, false);
     }
@@ -257,13 +261,9 @@
     }
 
     global.page = {
-            init: init,
-            onDown: onDown,
-            onUp: onUp
-        }
-        // module.exports = {
-        //  init    : init, 
-        //  onDown  : onDown,
-        //  onUp    : onUp
-        // }
+        init: init,
+        onDown: onDown,
+        onUp: onUp
+    };
+
 })(window);
