@@ -24,9 +24,9 @@ fis.config.merge({
         },
         path: [{
             reg: '**.otf',
-            release: '/css/font$&',
+            release: '$&',
             useHash: true,
-            userDomain: true
+            useDomain: true
         }]
     },
     deploy: {
