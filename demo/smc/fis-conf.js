@@ -1,4 +1,4 @@
-fis.config.set('roadmap.domain', '/demo/smc-1.0.5');
+fis.config.set('roadmap.domain', '/demo/smc-1.1.0');
 
 fis.config.merge({
     modules: {
@@ -10,12 +10,12 @@ fis.config.merge({
         }
     },
     pack: {
-        'css/aio.css': [
-            'css/**.css',
-            'css/**.less'
+        'static/css/aio.css': [
+            'static/css/**.css',
+            'static/css/**.less'
         ],
-        'js/aio.js': [
-            'js/**.js'
+        'static/js/aio.js': [
+            'static/js/**.js'
         ]
     },
     roadmap: {
@@ -23,7 +23,7 @@ fis.config.merge({
             less: 'css'
         },
         path: [{
-            reg: '**.otf',
+            reg: '**.(otf|woff)',
             release: '$&',
             useHash: true,
             useDomain: true
@@ -33,7 +33,7 @@ fis.config.merge({
         smc: {
             //from参数省略，表示从发布后的根目录开始上传
             //发布到当前项目的上一级的output目录中
-            to: '../smc-1.0.5'
+            to: '../smc-1.1.0'
         }
     }
 });

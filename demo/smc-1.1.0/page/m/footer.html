@@ -1,0 +1,46 @@
+<footer class="footer">
+STANDMAC Mes Co., Ltd.<br>www.standmac.com<br>© Copyright 2015 STANDMAC Mes Limited. All rights reserved.<br>
+</footer>
+<script type="text/javascript" src="/static/js/zepto_b7016d3.js"></script>
+<script type="text/javascript">
+Zepto(function($) {
+    $(".js_bgimg").attr('src', [
+        "/static/images/m/mobile_03_68c26bb.jpg",
+        "/static/images/m/mobile_06_96e1a7b.jpg",
+        "/static/images/m/mobile_08_783d842.jpg"
+    ][parseInt(Math.random() * 3) % 3]).show();
+
+    var $toggle = $('.js_toggle');
+    var $nav = $('.js_nav');
+
+    $toggle.click(function() {
+        $nav.toggleClass('g-hide');
+
+        return false;
+    });
+
+    var timer;
+    $(document).scroll(function() {
+        //clearTimeout(timer);
+
+        //timer = setTimeout(function() {
+        if ($(window).scrollTop() > 56) {
+            $('body').addClass('pinned');
+        } else {
+            $('body').removeClass('pinned');
+        };
+        //}, 10);
+    });
+});
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?e86bb3b689b16344b8fce5f596809636";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

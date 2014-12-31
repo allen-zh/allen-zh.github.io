@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="rs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>STANDMAC</title>
+<link href="http://www.standmac.com/images/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="/static/css/smc_6a18f57.css" />
+<style type="text/css">
+    body {
+        overflow: hidden;
+    }
+    body .bg {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+    </style>
+</head>
+<body class="rs">
+<img src="/static/images/blank_5bef3d0.gif" alt="" class="g-hide bg">
+<header class="header">
+<div class="g-wd header-inner">
+<div class="g-fr lang-switch">
+<a hidefocus="true" href="">中文</a>
+<span class="split">|</span>
+<a href="">ENGLISH</a>
+</div>
+<a hidefocus="true" href="./" class="g-ib logo">
+<img src="/static/images/logo_e18d643.png" width="140" height="65">
+</a>
+<nav class="g-ib nav">
+<a hidefocus="true" href="concept.html" class="g-ib nav-item">Concept</a>
+<a hidefocus="true" href="about-us.html" class="g-ib nav-item">About Us</a>
+<a hidefocus="true" href="profile.html" class="g-ib nav-item">Profile</a>
+<a hidefocus="true" href="join-us.html" class="g-ib nav-item">Join Us</a>
+</nav>
+</div>
+</header>
+<section class="bar">
+<div class="g-wd bar-inner">
+<div class="g-fr login-box">
+<a hidefocus="true" id="login" href="" class="login">Login</a>
+<span class="split">|</span>
+<a hidefocus="true" id="reg" href="" class="reg">Register</a>
+</div>
+</div>
+</section>
+<section class="g-wd main"></section>
+<footer class="g-wd footer">
+STANDMAC Mes Co., Ltd.<br>www.standmac.com<br>© Copyright 2015 STANDMAC Mes Limited. All rights reserved.<br>
+</footer>
+<script type="text/javascript" src="/static/js/jquery_7350410.js"></script>
+<script type="text/javascript" src="/static/js/common_6df2b46.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("body .bg").attr('src', [
+            "/static/images/bg/p1_dda2d7d.jpg",
+            "/static/images/bg/p2_6899df8.jpg",
+            "/static/images/bg/p3_859db93.jpg"
+        ][parseInt(Math.random() * 3) % 3]).show();
+
+        popWin.init();
+        bgImgFix.init();
+    });
+    </script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e86bb3b689b16344b8fce5f596809636";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+</html>
