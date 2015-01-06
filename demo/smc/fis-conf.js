@@ -1,4 +1,5 @@
-fis.config.set('roadmap.domain', '/demo/smc-1.1.0');
+//fis.config.set('roadmap.domain', '/demo/smc-1.1.0');
+fis.config.set('roadmap.domain', '/v1');
 
 fis.config.merge({
     modules: {

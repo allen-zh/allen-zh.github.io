@@ -11,7 +11,6 @@ var popWin = {
             })
             .click(function() {
                 popWin.show();
-
                 return false;
             });
 
