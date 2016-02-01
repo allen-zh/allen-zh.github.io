@@ -5,7 +5,7 @@ body, .header .nav {
 .bar, .footer {
     font-size: 0.8em;
 }
-.index {
+/*.index {
     .header, .bar {
         position: absolute;
         width: 100%;
@@ -13,28 +13,41 @@ body, .header .nav {
         left: 0;
     }
     .bar {
-        top: 65px;
+        top: 50px;
     }
+}*/
+.bar{
+    height: 20px;
+}
+.bar:after{
+    top:20px;
 }
 .header {
+    height: 50px;
+    .logo, .logo img{
+        height: 50px;
+        width: 110px;
+    }
     .logo_s {
-        height: 65px;
-        width: 80px;
+        height: 100%;
+        width: 60px;
     }
     .logo_s img {
-        margin-top: 15px;
-        margin-left: 25px;
+        margin-top: unit((50-30*0.8)/2-2,px);
+        margin-left: 20px;
+        height: unit(30*0.8,px);
+        width: unit(38*0.8,px);
     }
     .label {
-        line-height: 65px;
+        line-height: 50px;
         color: #fff;
         font-size: 1.2em;
         margin-left: 0px;
     }
     .toggle {
-        width: unit(89*0.5, px);
-        height: unit(51*0.5, px);
-        margin-top: 20px; //unit((65-51*0.5)/2, px);
+        width: unit(89*0.4, px);
+        height: unit(51*0.4, px);
+        margin-top: unit((50-51*0.4)/2, px);
         margin-right: 15px;
         margin-left: 20px;
         background: url(../images/m/toggle_03.png) center center no-repeat;
@@ -94,7 +107,7 @@ body, .header .nav {
     }
 }
 .pinned .bar {
-    height: 97px !important;
+    height: 70px !important;
     position: static !important;
 }
 .m {
@@ -133,6 +146,7 @@ body, .header .nav {
     font-weight: lighter;
     img {
         width: 100%;
+        min-height: 200px;
     }
     h3, p {
         padding: 0 5%;
@@ -164,6 +178,10 @@ body, .header .nav {
     .main img {
         width: 140%;
         margin-left: -20%;
+    }
+    .index .main img{
+        width: 180%;
+        margin-left: -40%;
     }
     .main .full {
         width: 100%;

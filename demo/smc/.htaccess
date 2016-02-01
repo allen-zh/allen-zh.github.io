@@ -1,16 +1,27 @@
 RewriteEngine on 
 RewriteBase / 
 
-## 轉向所有domain.com 去www.domain.com
+## 将所有domain.com和/ 301到www.domain.com
 RewriteCond %{HTTP_HOST} ^standmac\.com$ [NC]
 RewriteRule ^(.*)$ http://www.standmac.com/$1 [L,R=301]
 
-## 所有的沒有結尾斜線但是又是指向資料夾的URL，轉向成有結尾斜線的URL
-RewriteRule ^new$ new/ [L,R=302]
+## 新版静态资源的请求
+RewriteRule ^/v1/static/(.*)$ v1/static/$1 [L]
 
 RewriteCond %{HTTP_USER_AGENT} android|blackberry|ip(hone|od|ad)|kindle|symbian|wap [NC]
-RewriteRule ^new/(.*)$ v1/page/m/$1
-RewriteRule ^new/(.*)$ v1/page/pc/$1
+RewriteRule ^(.*\.html)$ v1/page/m/$1 [L]
+RewriteRule ^(.*\.html)$ v1/page/pc/$1 [L]
+
+RewriteCond %{HTTP_USER_AGENT} android|blackberry|ip(hone|od|ad)|kindle|symbian|wap [NC]
+RewriteRule ^$ v1/page/m/
+RewriteRule ^$ v1/page/pc/
+
+## page rewrite测试
+RewriteRule ^page$ page/ [L,R=302]
+
+RewriteCond %{HTTP_USER_AGENT} android|blackberry|ip(hone|od|ad)|kindle|symbian|wap [NC]
+RewriteRule ^page/(.*)$ v1/page/m/$1 [L]
+RewriteRule ^page/(.*)$ v1/page/pc/$1 [L]
 
 ##<FilesMatch "\.(js|css)$">
 ##Header set Cache-Control "max-age=120"
